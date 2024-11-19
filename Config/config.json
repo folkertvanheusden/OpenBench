@@ -22,5 +22,5 @@
         "UHO_4060_vT.epd"
     ],
 
-    "engines": ["BlackMarlin", "Ethereal", "Stockfish", "Toad"]
+    "engines": ["BlackMarlin", "Ethereal", "Stockfish", "Toad", "Yukari"]
 }
