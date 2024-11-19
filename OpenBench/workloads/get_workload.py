@@ -224,6 +224,7 @@ def workload_to_dictionary(test, result, machine):
         'time_control' : test.dev_time_control,
         'build'        : OPENBENCH_CONFIG['engines'][test.dev_engine]['build'],
         'private'      : OPENBENCH_CONFIG['engines'][test.dev_engine]['private'],
+        'protocol'     : test.dev_protocol,
     }
 
     workload['test']['base'] = {
@@ -239,6 +240,7 @@ def workload_to_dictionary(test, result, machine):
         'time_control' : test.base_time_control,
         'build'        : OPENBENCH_CONFIG['engines'][test.base_engine]['build'],
         'private'      : OPENBENCH_CONFIG['engines'][test.base_engine]['private'],
+        'protocol'     : test.base_protocol,
     }
 
     workload['distribution']   = game_distribution(test, machine)
