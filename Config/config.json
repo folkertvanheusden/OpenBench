@@ -22,5 +22,23 @@
         "UHO_4060_vT.epd"
     ],
 
-    "engines": ["BlackMarlin", "Ethereal", "Stockfish", "Toad", "Yukari"]
+    "engines": [
+        "4ku",
+        "BlackMarlin",
+        "BoyChesser",
+        "Dragon",
+        "Ethereal",
+        "FabChess",
+        "Igel",
+        "Obsidian",
+        "Polaris",
+        "Stockfish",
+        "Stormphrax",
+        "Tantabus",
+        "Toad",
+        "Torch",
+        "Viridithas",
+        "Yukari",
+        "ice4"
+    ]
 }
