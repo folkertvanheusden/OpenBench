@@ -1,0 +1,89 @@
+{
+    "private" : false,
+    "nps"     : 2200000,
+    "source"  : "https://github.com/MinusKelvin/ice4",
+
+    "build" : {
+        "path"      : "",
+        "compilers" : ["g++"],
+        "cpuflags"  : [],
+        "systems"   : ["Linux"]
+    },
+
+    "test_presets" : {
+        "default" : {
+            "base_branch"     : "main",
+            "book_name"       : "4moves_noob.epd",
+            "test_bounds"     : "[0.00, 5.00]",
+            "test_confidence" : "[0.1, 0.05]",
+            "win_adj"         : "None",
+            "draw_adj"        : "None",
+            "syzygy_adj"      : "Disabled"
+        },
+
+        "STC" : {
+            "both_options"      : "Threads=1 Hash=8",
+            "both_time_control" : "8.0+0.08",
+            "workload_size"     : 8
+        },
+
+        "LTC" : {
+            "both_options"      : "Threads=1 Hash=64",
+            "both_time_control" : "60.0+0.6",
+            "workload_size"     : 4
+        },
+
+        "SMP STC" : {
+            "both_options"      : "Threads=4 Hash=32",
+            "both_time_control" : "6.0+0.06",
+            "workload_size"     : 8
+        },
+
+        "SMP LTC" : {
+            "both_options"      : "Threads=8 Hash=128",
+            "both_time_control" : "25.0+0.25",
+            "workload_size"     : 4
+        },
+
+        "STC Regression" : {
+            "both_options"      : "Threads=1 Hash=8",
+            "both_time_control" : "8.0+0.08",
+            "test_bounds"       : "[-5.00, 0.00]",
+            "test_confidence"   : "[0.05, 0.05]",
+            "workload_size"     : 8
+        },
+
+        "LTC Regression" : {
+            "both_options"      : "Threads=1 Hash=64",
+            "both_time_control" : "60.0+0.6",
+            "test_bounds"       : "[-5.00, 0.00]",
+            "test_confidence"   : "[0.05, 0.05]",
+            "workload_size"     : 4
+        },
+
+        "STC Elo" : {
+            "both_options"      : "Threads=1 Hash=8",
+            "both_time_control" : "8.0+0.08",
+            "test_max_games"    : 10000,
+            "workload_size"     : 8
+        },
+
+        "LTC Elo" : {
+            "both_options"      : "Threads=1 Hash=64",
+            "both_time_control" : "60.0+0.6",
+            "test_max_games"    : 10000,
+            "workload_size"     : 4
+        }
+    },
+
+    "tune_presets" : {
+        "default" : {
+            "dev_options"      : "Threads=1 Hash=64",
+            "dev_time_control" : "60.0+0.6",
+            "book_name"        : "UHO_Lichess_4852_v1.epd",
+            "win_adj"          : "None",
+            "draw_adj"         : "None",
+            "syzygy_adj"       : "Disabled"
+        }
+    }
+}
