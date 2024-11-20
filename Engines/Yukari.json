@@ -1,7 +1,7 @@
 {
     "private": false,
     "nps": 2455379,
-    "source": "https://github.com/dannyhammer/yukari",
+    "source": "https://github.com/yukarichess/yukari",
     "protocols": ["xboard"],
 
     "build": {
