@@ -1,11 +1,11 @@
 {
     "private": false,
-    "nps": 1000000,
+    "nps": 2943546,
     "source": "https://github.com/JonathanHallstrom/pawnocchio",
 
     "build": {
         "path": "",
-        "compilers": ["zig=0.13.0"],
+        "compilers": ["zig"],
         "cpuflags": [],
         "systems": ["Linux", "Windows", "Darwin"]
     },
