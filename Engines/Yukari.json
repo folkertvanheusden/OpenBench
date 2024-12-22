@@ -1,6 +1,6 @@
 {
     "private": false,
-    "nps": 1556079,
+    "nps": 13676181,
     "source": "https://github.com/yukarichess/yukari",
     "protocols": ["xboard"],
 
@@ -62,16 +62,9 @@
             "test_max_games": 1000
         },
 
-        "SMP STC": {
-            "both_options": "Threads=4 Hash=16",
-            "both_time_control": "8.0+0.08",
-            "workload_size": 32
-        },
-
-        "SMP LTC": {
-            "both_options": "Threads=4 Hash=128",
-            "both_time_control": "40.0+0.4",
-            "workload_size": 8
+        "NNUE validation": {
+            "both_options": "Threads=1 Hash=16",
+            "both_time_control": "N=25000"
         }
     },
 
