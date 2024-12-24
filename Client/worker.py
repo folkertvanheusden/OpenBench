@@ -150,16 +150,34 @@ class Configuration:
 
             # Try to find at least one working compiler
             for compiler in build_info['compilers']:
+                # Some compilers, like cargo, can require additional flags like `nightly`
+                additional_flags = None 
 
                 # Compilers may require a specific version
                 if '>=' in compiler:
                     compiler, version = compiler.split('>=')
+                    
+                    # Save any additional flags after the -
+                    if '-' in version:
+                        version, additional_flags = version.split('-')
+
                     version = tuple(map(int, version.split('.')))
                 else: version = (0, 0, 0)
 
                 # Try to confirm this compiler is present, and new enough
                 try:
+                    found_flags = None
                     match = get_version(compiler)
+                    
+                    # Fetch any additional flags after the -
+                    if '-' in match:
+                        match, found_flags = match.split('-')
+
+                    # If this engine requires additional flags, check that this worker has them
+                    if additional_flags and additional_flags not in found_flags:
+                        # Required flags not found; unable to execute compiler
+                        continue
+
                     if tuple(map(int, match.split('.'))) >= version:
                         print('%-16s | %-8s (%s)' % (engine, compiler, match))
                         self.compilers[engine] = (compiler, match)
@@ -707,12 +725,12 @@ def get_version(program):
     try:
         process = Popen([program, '--version'], stdout=PIPE, stderr=PIPE)
         stdout  = process.communicate()[0].decode('utf-8')
-        return re.search(r'\d+\.\d+(\.\d+)?', stdout).group()
+        return re.search(r'\d+\.\d+(\.\d+)?(-\w+)?', stdout).group()
 
     except:
         process = Popen([program, 'version'], stdout=PIPE, stderr=PIPE)
         stdout  = process.communicate()[0].decode('utf-8')
-        return re.search(r'\d+\.\d+(\.\d+)?', stdout).group()
+        return re.search(r'\d+\.\d+(\.\d+)?(-\w+)?', stdout).group()
 
 def locate_utility(util, force_exit=True, report_error=True):
 
