@@ -1,6 +1,6 @@
 {
     "private": false,
-    "nps": 2661300,
+    "nps": 2620190,
     "source": "https://github.com/dannyhammer/toad",
 
     "build": {
@@ -16,8 +16,8 @@
             "dev_branch": "dev",
             "book_name": "UHO_Lichess_4852_v1.epd",
             "test_bounds": "[0.00, 10.00]",
-            "test_confidence": "[0.05, 0.05]",
-            "win_adj": "None",
+            "test_confidence": "[0.10, 0.05]",
+            "win_adj": "movecount=3 score=400",
             "draw_adj": "None",
             "priority": "-42"
         },
