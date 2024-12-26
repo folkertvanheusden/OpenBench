@@ -189,7 +189,7 @@ def create_new_tune(request):
     test.dev_options      = test.base_options      = request.POST['dev_options']
     test.dev_network      = test.base_network      = request.POST['dev_network']
     test.dev_time_control = test.base_time_control = OpenBench.utils.TimeControl.parse(request.POST['dev_time_control'])
-    test.dev_protocol     = test.base_network      = request.POST['dev_protocol']
+    test.dev_protocol     = test.base_protocol      = request.POST['dev_protocol']
 
     test.workload_size    = int(request.POST['spsa_pairs_per'])
     test.priority         = int(request.POST['priority'])
