@@ -1,0 +1,45 @@
+{
+    "private" : false,
+    "nps"     : 2923562,
+    "source"  : "https://github.com/folkertvanheusden/Dog",
+
+    "build" : {
+        "path"      : "app/src/linux-windows",
+        "compilers" : ["g++"],
+        "cpuflags"  : [],
+        "systems"   : ["Windows", "Linux"]
+
+    },
+
+    "test_presets" : {
+        "default" : {
+            "base_branch"     : "main",
+            "book_name"       : "4moves_noob.epd",
+            "test_bounds"     : "[0.00, 5.00]",
+            "test_confidence" : "[0.1, 0.05]",
+            "win_adj"         : "None",
+            "draw_adj"        : "None",
+            "syzygy_adj"      : "Optional"
+        },
+
+        "STC" : {
+            "both_options"      : "Threads=1 Hash=8",
+            "both_time_control" : "8.0+0.08",
+            "workload_size"     : 8
+        },
+
+        "LTC" : {
+            "both_options"      : "Threads=1 Hash=64",
+            "both_time_control" : "40.0+0.4",
+            "workload_size"     : 4
+        }
+    },
+
+    "tune_presets" : {
+        "default" : {
+            "book_name" : "4moves_noob.epd",
+            "win_adj"   : "movecount=3 score=400",
+            "draw_adj"  : "movenumber=40 movecount=8 score=10"
+        }
+    }
+}
