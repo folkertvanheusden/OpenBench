@@ -5,10 +5,9 @@
 
     "build" : {
         "path"      : "app/src/linux-windows",
-        "compilers" : ["g++>=14"],
+        "compilers" : ["g++>=14", "clang++>=19"],
         "cpuflags"  : [],
-        "systems"   : ["Windows", "Linux"]
-
+        "systems"   : ["Linux"]
     },
 
     "test_presets" : {
@@ -19,7 +18,7 @@
             "test_confidence" : "[0.1, 0.05]",
             "win_adj"         : "None",
             "draw_adj"        : "None",
-            "syzygy_adj"      : "Optional"
+            "syzygy_adj"      : "7-Man"
         },
 
         "STC" : {
