@@ -1,7 +1,7 @@
 {
     "private": false,
     "nps": 2791491,
-    "source": "https://git.transistor.house/87/bannou.git",
+    "source": "https://github.com/87flowers/bannou",
 
     "build": {
         "path": "",
