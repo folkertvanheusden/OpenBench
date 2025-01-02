@@ -5,7 +5,7 @@
 
     "build" : {
         "path"      : "app/src/linux-windows",
-        "compilers" : ["g++>=14", "clang++-14", "clang++-19"],
+        "compilers" : ["g++-14", "clang++-14", "clang++-19"],
         "cpuflags"  : [],
         "systems"   : ["Linux"]
     },
