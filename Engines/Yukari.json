@@ -2,7 +2,7 @@
     "private": false,
     "nps": 1181694,
     "source": "https://github.com/yukarichess/yukari",
-    "protocols": ["xboard"],
+    "protocols": ["xboard", "uci"],
 
     "build": {
         "path": "",
